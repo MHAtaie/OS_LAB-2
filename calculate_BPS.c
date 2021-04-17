@@ -19,7 +19,7 @@ int main(int argc, char *argv[]){
 			: "=r" (saved_ebx)
 			: "r"(number)
 		);
-		printf(1, "User: calculate_BPS() called for number: %d\n" , number);
+		printf(1, "User: calculate_BPS() Called for number: %d\n" , number);
 		printf(1, "BPS of Number %d is: %d\n" , number , calculate_BPS());
 
 		asm("movl %0, %%ebx" : : "r"(saved_ebx)); // ebx = saved_ebx -> restore
