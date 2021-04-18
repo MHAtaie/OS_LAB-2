@@ -25,6 +25,7 @@ int sleep(int);
 int uptime(void);
 int trace_syscalls(int);
 int calculate_BPS(void);
+void set_sleep(void);
 
 // ulib.c
 int stat(const char*, struct stat*);
