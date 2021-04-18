@@ -22,3 +22,4 @@
 #define SYS_close  21
 #define SYS_trace_syscalls 22
 #define SYS_calculate_BPS 23
+#define SYS_set_sleep 24
