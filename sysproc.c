@@ -127,3 +127,13 @@ sys_calculate_BPS(void)
   cprintf("Kernel: sys_calculate_BPS() called for number: %d\n" , number);
   return calculate_BPS(number);
 }
+
+void sys_set_sleep(void)
+{
+  int duration = 0;
+  if(argint(0, &duration) < 0)
+  {
+    cprintf("Bad input for set_sleep system call.\n");
+  }
+  set_sleep(duration);
+}
