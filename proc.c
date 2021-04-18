@@ -635,5 +635,4 @@ set_sleep(int n)
   ticksTemp = ticks;
   while(ticks - ticksTemp < n * 100)
       sti();
-  return 0;
 }
