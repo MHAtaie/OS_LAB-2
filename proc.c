@@ -628,3 +628,12 @@ calculate_BPS(int num)
   }
   return i;
 }
+void
+set_sleep(int n)
+{
+  uint ticksTemp;
+  ticksTemp = ticks;
+  while(ticks - ticksTemp < n * 100)
+      sti();
+  return 0;
+}
