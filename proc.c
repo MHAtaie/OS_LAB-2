@@ -636,3 +636,18 @@ set_sleep(int n)
   while(ticks - ticksTemp < n * 100)
       sti();
 }
+int
+get_ancestors(int pid)
+{
+  struct proc *p;
+
+  acquire(&ptable.lock);
+  for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
+    if(p->pid == pid){
+      release(&ptable.lock);
+      return p->parent->pid;
+    }
+  }
+  release(&ptable.lock);
+  return 0;
+}
