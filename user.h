@@ -26,6 +26,7 @@ int uptime(void);
 int trace_syscalls(int);
 int calculate_BPS(void);
 void set_sleep(int);
+int sys_date(struct rtcdate*);
 
 // ulib.c
 int stat(const char*, struct stat*);

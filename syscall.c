@@ -106,6 +106,7 @@ extern int sys_uptime(void);
 extern int sys_trace_syscalls(void);
 extern int sys_calculate_BPS(void);
 extern int sys_set_sleep(void);
+extern int sys_date(void);
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -132,6 +133,7 @@ static int (*syscalls[])(void) = {
 [SYS_trace_syscalls] sys_trace_syscalls,
 [SYS_calculate_BPS] sys_calculate_BPS,
 [SYS_set_sleep] sys_set_sleep,
+[SYS_date]    sys_date,
 };
 
 void
