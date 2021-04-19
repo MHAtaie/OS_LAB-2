@@ -22,7 +22,7 @@ int main(int argc, char *argv[]){
 		);
 		printf(1, "User: Set_sleep() Called for number: %d\n" , number);
         //cmostime(r);
-		set_sleep();
+		set_sleep(number);
 		asm("movl %0, %%ebx" : : "r"(saved_ebx)); // ebx = saved_ebx -> restore
 		exit();  	
     }
