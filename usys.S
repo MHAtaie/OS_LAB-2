@@ -1,6 +1,5 @@
 #include "syscall.h"
 #include "traps.h"
-
 #define SYSCALL(name) \
   .globl name; \
   name: \
@@ -8,6 +7,15 @@
     int $T_SYSCALL; \
     ret
 
+#define SYSCALLR(name) \
+  .globl name; \
+  name: \
+    movl $SYS_ ## name, %eax; \
+    add $4, %esp;  \
+    mov (%esp), %edx; \
+    sub $4, %esp; \
+    int $T_SYSCALL; \
+    ret
 SYSCALL(fork)
 SYSCALL(exit)
 SYSCALL(wait)
@@ -32,4 +40,5 @@ SYSCALL(uptime)
 SYSCALL(trace_syscalls)
 SYSCALL(calculate_BPS)
 SYSCALL(set_sleep)
+SYSCALL(date)
 SYSCALL(get_ancestors)

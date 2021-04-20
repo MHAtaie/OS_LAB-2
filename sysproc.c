@@ -145,6 +145,7 @@ sys_date(void)
   if(argptr(0, (void*)&r, sizeof(&r)) < 0)
     return -1;
   cmostime(r);
+  cprintf("date : %d %d %d\n" , r->hour, r->minute, r->second);
   return 0;
 }
 int

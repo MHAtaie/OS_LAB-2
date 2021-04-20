@@ -10,7 +10,7 @@ int main(int argc, char *argv[]){
 		exit();
 	}
 	if(argc == 2){
-        //struct rtcdate* r;
+        struct rtcdate* r = 0;
 		// We will use ebx register for storing input number
 		int saved_ebx, number = atoi(argv[1]);
 		// 
@@ -21,9 +21,13 @@ int main(int argc, char *argv[]){
 			: "r"(number)
 		);
 		printf(1, "User: Set_sleep() Called for number: %d\n" , number);
-        //  sys_date(r);
+        date(r);
+		//printf(1, "date : %d %d %d\n" , r->hour, r->minute, r->second);
+
         set_sleep(number);
 		asm("movl %0, %%ebx" : : "r"(saved_ebx)); // ebx = saved_ebx -> restore
+		date(r);
+		//printf(1, "date : %d %d %d\n" , r->hour, r->minute, r->second);
 		exit();  	
     }
 
