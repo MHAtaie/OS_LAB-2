@@ -29,6 +29,7 @@ void set_sleep(int);
 int date(struct rtcdate*);
 int get_parent(int);
 int get_ancestors(int, char*, int);
+int get_descendants(int, char*, int);
 
 // ulib.c
 int stat(const char*, struct stat*);

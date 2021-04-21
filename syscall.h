@@ -25,4 +25,5 @@
 #define SYS_set_sleep      24
 #define SYS_date           25
 #define SYS_get_parent     26
-#define SYS_get_ancestors 27
+#define SYS_get_ancestors  27
+#define SYS_get_descendants   28

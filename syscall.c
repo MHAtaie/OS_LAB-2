@@ -109,6 +109,7 @@ extern int sys_set_sleep(void);
 extern int sys_date(void);
 extern int sys_get_parent(void);
 extern int sys_get_ancestors(void);
+extern int sys_get_descendants(void);
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -137,7 +138,8 @@ static int (*syscalls[])(void) = {
 [SYS_set_sleep]         sys_set_sleep,
 [SYS_date]              sys_date,
 [SYS_get_parent]        sys_get_parent,
-[SYS_get_ancestors]    sys_get_ancestors,
+[SYS_get_ancestors]     sys_get_ancestors,
+[SYS_get_descendants]      sys_get_descendants,
 };
 
 void
