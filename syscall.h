@@ -24,4 +24,4 @@
 #define SYS_calculate_BPS  23
 #define SYS_set_sleep      24
 #define SYS_date           25
-#define SYS_get_ancestors  26
+#define SYS_get_parent  26

@@ -149,10 +149,10 @@ sys_date(void)
   return 0;
 }
 int
-sys_get_ancestors(void)
+sys_get_parent(void)
 {
   int pid = 0;
   if (argint(0, &pid) < 0)
     return -1;
-  return get_ancestors(pid);
+  return get_parent(pid);
 }

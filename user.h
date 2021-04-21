@@ -27,7 +27,7 @@ int trace_syscalls(int);
 int calculate_BPS(void);
 void set_sleep(int);
 int date(struct rtcdate*);
-int get_ancestors(int);
+int get_parent(int);
 
 // ulib.c
 int stat(const char*, struct stat*);

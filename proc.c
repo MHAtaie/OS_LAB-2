@@ -637,7 +637,7 @@ set_sleep(int n)
       sti();
 }
 int
-get_ancestors(int pid)
+get_parent(int pid)
 {
   struct proc *p;
 

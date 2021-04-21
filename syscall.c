@@ -107,7 +107,7 @@ extern int sys_trace_syscalls(void);
 extern int sys_calculate_BPS(void);
 extern int sys_set_sleep(void);
 extern int sys_date(void);
-extern int sys_get_ancestors(void);
+extern int sys_get_parent(void);
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -135,7 +135,7 @@ static int (*syscalls[])(void) = {
 [SYS_calculate_BPS] sys_calculate_BPS,
 [SYS_set_sleep] sys_set_sleep,
 [SYS_date]    sys_date,
-[SYS_get_ancestors]        sys_get_ancestors,
+[SYS_get_parent]        sys_get_parent,
 };
 
 void
