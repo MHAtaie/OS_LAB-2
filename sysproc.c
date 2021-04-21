@@ -156,3 +156,20 @@ sys_get_parent(void)
     return -1;
   return get_parent(pid);
 }
+
+int
+sys_get_ancestors(void)
+{
+  int pid = 0;
+  char* buf;
+  int buf_size = 0;
+
+  if (argint(0, &pid) < 0)
+    return -1;
+  else if(argstr(1, (void*)&buf) < 0)
+    return -1;
+  else if(argint(2, &buf_size) < 0)
+    return -1;
+  get_ancestors(pid, buf, buf_size);
+  return 0;
+}

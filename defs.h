@@ -127,6 +127,7 @@ int             get_trace_state(void);
 int             calculate_BPS(int);
 void            set_sleep(int);
 int             get_parent(int);
+int             get_ancestors(int, char*, int);
 
 // swtch.S
 void            swtch(struct context**, struct context*);

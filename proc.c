@@ -651,3 +651,36 @@ get_parent(int pid)
   release(&ptable.lock);
   return 0;
 }
+
+int
+get_ancestors(int pid, char* buf, int buf_size)
+{
+  struct proc *p;
+
+  int children[100];
+  int children_idx = 0;
+
+  acquire(&ptable.lock);
+  for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
+    if(p->parent->pid == pid)
+    {
+      int endIndex = 0;
+      while(endIndex < buf_size && buf[endIndex] != '\0')
+        endIndex++;
+
+      if(endIndex > buf_size - 2)
+        exit();
+      
+      buf[endIndex] = (p->pid + '0');
+      buf[endIndex + 1] = '\0';
+
+      children[children_idx++] = p->pid;
+    }
+  }
+
+  for (int i = 0; i < children_idx; i++)
+    get_ancestors(children[i], buf, buf_size);
+  
+  release(&ptable.lock);
+  return 0;
+}
